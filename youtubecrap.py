@@ -27,9 +27,11 @@ url = input("Enter the youtube url channel you want to scrap: ")
 driver.get(url)
 
 # load the whole page 
+# The number can be calculated by the number of videos in the chanel divided by 24
+# 50 is the default for most chanels have less than 1000 videos
 for _ in range (50):
     driver.find_element(By.TAG_NAME, "body").send_keys(Keys.END)
-    time.sleep(3)
+    time.sleep(2)
 # get html page source to use for scrapping
 html = driver.page_source
 
