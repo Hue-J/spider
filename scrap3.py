@@ -1,3 +1,12 @@
+''' 
+Some websites built in javascript and django cannot be scrapped using the request
+module. Request is only applicable for the webpages that return xml or html.
+For those that do not return html you need selenium module which opens the 
+page the same way as the browser making the html available.
+
+BELOW IS AN EXAMPLE OF A WEBSITE THAT IS DIFFICULT TO SCRAP USING REQUEST LIBRARY.
+'''
+
 import requests
 from bs4 import BeautifulSoup
 
