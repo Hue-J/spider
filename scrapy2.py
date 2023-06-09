@@ -1,3 +1,8 @@
+'''
+This is a continuation of scrapy1 with the difference being the website to be scrapped.
+There is no one scrapper fit all, all websites are designed differently and so each 
+spider has to be unique.
+'''
 import requests
 from bs4 import BeautifulSoup
 
