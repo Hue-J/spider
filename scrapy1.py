@@ -1,3 +1,9 @@
+'''
+The code gets data from the webpage https://realpython.github.io/fake-jobs/ 
+The idea is to find specific jjobs from the website by utilizing the lambda 
+function to specify the string literal.
+'''
+# Import required modules to be used.
 import requests
 from bs4 import BeautifulSoup
 
@@ -10,7 +16,7 @@ page = requests.get(URL)
 #Parse the html data to BeutifulSoup and create new object
 soup = BeautifulSoup(page.content, 'html.parser')
 
-#FInd element by ID
+#Find element by ID
 results = soup.find(id='ResultsContainer')
 
 #Narrow down the results
@@ -24,6 +30,12 @@ for job_element in job_elements:
     title_element = job_element.find("h2", class_="title")
     company_element = job_element.find("h3", class_="company")
     location_element = job_element.find("p", class_="location")
+
+    #There are two ways to get the elements in the class     
+
+#     title_element = job_element.find("h2", {'class' : "title"})
+#     company_element = job_element.find("h3",{ 'class': "company"})
+#     location_element = job_element.find("p", {'class': "location"})
     
     print(title_element.text.strip())
     print(company_element.text.strip())
