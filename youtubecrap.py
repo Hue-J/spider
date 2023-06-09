@@ -1,3 +1,9 @@
+'''
+This is a script meant to scrap videos from any youtube channel from the videos tab.
+The data to be collected os the channel name which is udes to name the csv file, video
+title, video url, number of views and the period that has passed since it was uploaded. 
+The data is then saved to a csv file.
+'''
 # import required drivers
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -16,11 +22,10 @@ import pandas as pd
 
 driver = webdriver.Firefox()
 
-# get url
+# get url for example https://www.youtube.com/@little_soul/videos
 url = input("Enter the youtube url channel you want to scrap: ")
 driver.get(url)
 
-# driver.get("https://www.youtube.com/@MakeDataUseful/videos")
 # load the whole page 
 for _ in range (50):
     driver.find_element(By.TAG_NAME, "body").send_keys(Keys.END)
